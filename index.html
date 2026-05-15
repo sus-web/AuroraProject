@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora — Невозможное становится реальным</title>
+    <meta name="description" content="Платформа нового поколения. Создавайте невозможное каждый день.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <span class="loader-mark">✦</span>
+            </div>
+            <div class="loader-text">
+                <span>A</span><span>U</span><span>R</span><span>O</span><span>R</span><span>A</span>
+            </div>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+            <div class="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- Прогресс скролла -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Анимированный фон -->
+    <div class="background">
+        <div class="gradient-mesh"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        <div class="grain"></div>
+    </div>
+
+    <!-- Spotlight -->
+    <div class="spotlight" id="spotlight"></div>
+
+    <!-- Курсор -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Навигация -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo" data-magnetic>
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Aurora</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Главная</a></li>
+                <li><a href="#features">Возможности</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="nav-cta" data-magnetic>Начать</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="badge reveal">
+                <span class="badge-dot"></span>
+                <span>v2.0 — Уже доступно</span>
+                <span class="badge-arrow">→</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="line"><span class="word">Создавайте</span></span>
+                <span class="line"><span class="word gradient-text">невозможное</span></span>
+                <span class="line"><span class="word">каждый день</span></span>
+            </h1>
+            <p class="hero-subtitle reveal">
+                Платформа нового поколения, которая превращает идеи в реальность.
+                Плавно, красиво и без компромиссов.
+            </p>
+            <div class="hero-actions reveal">
+                <button class="btn btn-primary" data-magnetic>
+                    <span>Попробовать бесплатно</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="btn btn-ghost" data-magnetic>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
+                    </svg>
+                    <span>Смотреть демо</span>
+                </button>
+            </div>
+            <div class="hero-stats reveal">
+                <div class="stat">
+                    <div class="stat-value" data-count="120">0</div>
+                    <div class="stat-label">Стран</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value" data-count="98">0</div>
+                    <div class="stat-label">% довольных</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value" data-count="24">0</div>
+                    <div class="stat-label">/ 7 поддержка</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Прокрутите</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>✦ Дизайн</span>
+                <span>◆ Скорость</span>
+                <span>● Инновации</span>
+                <span>✦ Эстетика</span>
+                <span>◆ Производительность</span>
+                <span>● Будущее</span>
+                <span>✦ Дизайн</span>
+                <span>◆ Скорость</span>
+                <span>● Инновации</span>
+                <span>✦ Эстетика</span>
+                <span>◆ Производительность</span>
+                <span>● Будущее</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bento -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <div class="badge reveal">
+                <span class="badge-dot"></span>
+                <span>Возможности</span>
+            </div>
+            <h2 class="section-title reveal">Всё, что нужно <span class="gradient-text">в одном месте</span></h2>
+            <p class="section-subtitle reveal">Инструменты, которые работают так же красиво, как и выглядят.</p>
+        </div>
+
+        <div class="bento">
+            <div class="bento-item bento-large glass reveal">
+                <div class="bento-content">
+                    <div class="feature-icon" style="--icon-color: #a78bfa;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Молниеносная скорость</h3>
+                    <p>Оптимизированная архитектура обеспечивает мгновенный отклик на любые действия. Время загрузки — менее 100мс.</p>
+                </div>
+                <div class="bento-visual">
+                    <div class="speed-rings"><div></div><div></div><div></div></div>
+                </div>
+                <div class="feature-glow"></div>
+            </div>
+
+            <div class="bento-item glass reveal">
+                <div class="feature-icon" style="--icon-color: #f472b6;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Премиум дизайн</h3>
+                <p>Каждый пиксель продуман до мелочей.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <div class="bento-item glass reveal">
+                <div class="feature-icon" style="--icon-color: #60a5fa;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 9h6v6H9z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Умная адаптация</h3>
+                <p>От смартфона до 4K экрана.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <div class="bento-item bento-wide glass reveal">
+                <div class="bento-content">
+                    <div class="feature-icon" style="--icon-color: #34d399;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Безопасность нового поколения</h3>
+                    <p>End-to-end шифрование, многоуровневая защита и регулярные аудиты безопасности.</p>
+                </div>
+                <div class="bento-code">
+                    <div class="code-line"><span class="c-key">const</span> <span class="c-var">data</span> = <span class="c-fn">encrypt</span>(<span class="c-str">'payload'</span>);</div>
+                    <div class="code-line"><span class="c-key">await</span> <span class="c-var">vault</span>.<span class="c-fn">store</span>(<span class="c-var">data</span>);</div>
+                    <div class="code-line"><span class="c-com">// ✓ Защищено</span></div>
+                </div>
+                <div class="feature-glow"></div>
+            </div>
+
+            <div class="bento-item glass reveal">
+                <div class="feature-icon" style="--icon-color: #fbbf24;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>24/7 поддержка</h3>
+                <p>Эксперты на связи всегда.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <div class="bento-item glass reveal">
+                <div class="feature-icon" style="--icon-color: #f87171;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Сделано с любовью</h3>
+                <p>Заботимся о каждой детали.</p>
+                <div class="feature-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase">
+        <div class="showcase-content glass reveal">
+            <div class="showcase-text">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    <span>Витрина</span>
+                </div>
+                <h2 class="section-title">Опыт, который <span class="gradient-text">запоминается</span></h2>
+                <p>Мы не просто создаём интерфейсы — мы проектируем эмоции. Каждое движение, каждый цвет, каждый переход тщательно продуман.</p>
+                <ul class="showcase-list">
+                    <li><span class="check">✓</span> Плавные 60fps анимации</li>
+                    <li><span class="check">✓</span> Glassmorphism и neumorphism</li>
+                    <li><span class="check">✓</span> Адаптивная типографика</li>
+                    <li><span class="check">✓</span> Тёмная и светлая темы</li>
+                </ul>
+                <button class="btn btn-primary" data-magnetic>
+                    <span>Узнать больше</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="showcase-visual">
+                <div class="orb orb-main"></div>
+                <div class="orb orb-secondary"></div>
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <div class="badge reveal">
+                <span class="badge-dot"></span>
+                <span>Тарифы</span>
+            </div>
+            <h2 class="section-title reveal">Простые <span class="gradient-text">и честные</span> цены</h2>
+            <p class="section-subtitle reveal">Выберите план, который подходит именно вам.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card glass reveal">
+                <div class="plan-name">Старт</div>
+                <div class="plan-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">0</span>
+                    <span class="price-period">/мес</span>
+                </div>
+                <p class="plan-desc">Для тех, кто только начинает свой путь.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> До 3 проектов</li>
+                    <li><span class="check">✓</span> 1 ГБ хранилища</li>
+                    <li><span class="check">✓</span> Базовая аналитика</li>
+                    <li class="muted"><span class="check muted">×</span> Приоритетная поддержка</li>
+                </ul>
+                <button class="btn btn-ghost btn-block" data-magnetic>Начать бесплатно</button>
+            </div>
+
+            <div class="pricing-card glass featured reveal">
+                <div class="featured-badge">Популярный</div>
+                <div class="plan-name">Профи</div>
+                <div class="plan-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">19</span>
+                    <span class="price-period">/мес</span>
+                </div>
+                <p class="plan-desc">Для команд и активных пользователей.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Неограниченно проектов</li>
+                    <li><span class="check">✓</span> 100 ГБ хранилища</li>
+                    <li><span class="check">✓</span> Расширенная аналитика</li>
+                    <li><span class="check">✓</span> Приоритетная поддержка</li>
+                </ul>
+                <button class="btn btn-primary btn-block" data-magnetic>Выбрать Профи</button>
+            </div>
+
+            <div class="pricing-card glass reveal">
+                <div class="plan-name">Бизнес</div>
+                <div class="plan-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">49</span>
+                    <span class="price-period">/мес</span>
+                </div>
+                <p class="plan-desc">Для компаний с особыми требованиями.</p>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Всё из Профи</li>
+                    <li><span class="check">✓</span> 1 ТБ хранилища</li>
+                    <li><span class="check">✓</span> Персональный менеджер</li>
+                    <li><span class="check">✓</span> SLA 99.99%</li>
+                </ul>
+                <button class="btn btn-ghost btn-block" data-magnetic>Связаться с нами</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <div class="badge reveal">
+                <span class="badge-dot"></span>
+                <span>Отзывы</span>
+            </div>
+            <h2 class="section-title reveal">Любимы <span class="gradient-text">тысячами</span></h2>
+        </div>
+
+        <div class="testimonials-marquee">
+            <div class="testimonials-track">
+                <div class="testimonial glass">
+                    <p>"Лучшая платформа, которую я когда-либо использовал. Дизайн просто невероятный."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #a78bfa, #f472b6);">А</div>
+                        <div><strong>Анна Соколова</strong><span>Дизайнер</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Скорость — это что-то невероятное. Вся команда в восторге."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #60a5fa, #34d399);">М</div>
+                        <div><strong>Михаил Петров</strong><span>Разработчик</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Простой, элегантный, мощный. Aurora изменила то, как мы работаем."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #f472b6, #fbbf24);">К</div>
+                        <div><strong>Катерина Лис</strong><span>Менеджер</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Каждая деталь продумана. Это настоящее произведение искусства."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #34d399, #60a5fa);">Д</div>
+                        <div><strong>Дмитрий Орлов</strong><span>CTO</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Никогда не видел такой плавности. Это будущее веба."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #fbbf24, #f87171);">Е</div>
+                        <div><strong>Елена Морозова</strong><span>Маркетолог</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Лучшая платформа, которую я когда-либо использовал. Дизайн просто невероятный."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #a78bfa, #f472b6);">А</div>
+                        <div><strong>Анна Соколова</strong><span>Дизайнер</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Скорость — это что-то невероятное. Вся команда в восторге."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #60a5fa, #34d399);">М</div>
+                        <div><strong>Михаил Петров</strong><span>Разработчик</span></div>
+                    </div>
+                </div>
+                <div class="testimonial glass">
+                    <p>"Простой, элегантный, мощный. Aurora изменила то, как мы работаем."</p>
+                    <div class="t-author">
+                        <div class="t-avatar" style="background: linear-gradient(135deg, #f472b6, #fbbf24);">К</div>
+                        <div><strong>Катерина Лис</strong><span>Менеджер</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="section-header">
+            <div class="badge reveal">
+                <span class="badge-dot"></span>
+                <span>Вопросы</span>
+            </div>
+            <h2 class="section-title reveal">Часто <span class="gradient-text">спрашивают</span></h2>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item glass reveal">
+                <summary>
+                    <span>С чего начать работу с Aurora?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                    Просто зарегистрируйтесь и получите доступ к бесплатному плану. Никаких кредитных карт, никаких обязательств — просто начните создавать.
+                </div>
+            </details>
+
+            <details class="faq-item glass reveal">
+                <summary>
+                    <span>Можно ли отменить подписку в любое время?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                    Конечно. Вы можете отменить подписку в любой момент в настройках аккаунта. Никаких скрытых условий и штрафов.
+                </div>
+            </details>
+
+            <details class="faq-item glass reveal">
+                <summary>
+                    <span>Как обстоит дело с безопасностью данных?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                    Мы используем end-to-end шифрование, регулярно проходим аудиты безопасности и соответствуем стандартам SOC 2 Type II и GDPR.
+                </div>
+            </details>
+
+            <details class="faq-item glass reveal">
+                <summary>
+                    <span>Есть ли API для интеграции?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                    Да, мы предоставляем полноценный REST API и WebSocket для real-time подключений. SDK доступны для всех популярных языков.
+                </div>
+            </details>
+
+            <details class="faq-item glass reveal">
+                <summary>
+                    <span>Поддерживается ли командная работа?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-content">
+                    Безусловно. Aurora изначально создавалась для команд: совместное редактирование, права доступа, история изменений и многое другое.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="cta">
+        <div class="cta-card glass reveal">
+            <div class="cta-bg-orb"></div>
+            <h2 class="section-title">Готовы <span class="gradient-text">начать</span>?</h2>
+            <p>Присоединяйтесь к тысячам тех, кто уже создаёт будущее.</p>
+            <form class="cta-form" id="ctaForm">
+                <input type="email" placeholder="ваш@email.com" required>
+                <button type="submit" class="btn btn-primary" data-magnetic>
+                    <span>Подписаться</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">Aurora</span>
+                </a>
+                <p>Создаём будущее одной идеей за раз.</p>
+                <div class="social">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8a8.5 8.5 0 01-2.4.7 4.2 4.2 0 001.8-2.3 8.4 8.4 0 01-2.6 1A4.1 4.1 0 0011.7 9a11.6 11.6 0 01-8.4-4.3 4.1 4.1 0 001.3 5.5 4 4 0 01-1.8-.5v.1A4.1 4.1 0 005.9 14a4 4 0 01-1.8.1 4.1 4.1 0 003.8 2.8A8.2 8.2 0 012 18.6 11.6 11.6 0 008.3 20c7.5 0 11.6-6.2 11.6-11.6v-.5A8.2 8.2 0 0022 5.8z"/></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Discord">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.3 5.3A18 18 0 0015 4l-.2.4a16 16 0 014 1.3 14 14 0 00-13.5 0 16 16 0 014-1.3L9 4a18 18 0 00-4.3 1.3A19 19 0 002 17.4 18 18 0 007.4 20l1-1.4a11 11 0 01-2-1l.5-.3a13 13 0 0010.2 0l.5.3a11 11 0 01-2 1l1 1.4a18 18 0 005.4-2.6 19 19 0 00-2.7-12zM9 14.4c-1 0-2-1-2-2.1s.9-2.1 2-2.1 2 1 2 2.1-.9 2.1-2 2.1zm6 0c-1 0-2-1-2-2.1s.9-2.1 2-2.1 2 1 2 2.1-.9 2.1-2 2.1z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Продукт</h4>
+                    <a href="#">Возможности</a>
+                    <a href="#">Цены</a>
+                    <a href="#">Документация</a>
+                    <a href="#">API</a>
+                </div>
+                <div>
+                    <h4>Компания</h4>
+                    <a href="#">О нас</a>
+                    <a href="#">Блог</a>
+                    <a href="#">Карьера</a>
+                    <a href="#">Партнёры</a>
+                </div>
+                <div>
+                    <h4>Поддержка</h4>
+                    <a href="#">Помощь</a>
+                    <a href="#">Сообщество</a>
+                    <a href="#">Статус</a>
+                    <a href="#">Контакты</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Aurora. Сделано с ✦ в космосе.</span>
+            <div class="footer-legal">
+                <a href="#">Конфиденциальность</a>
+                <a href="#">Условия</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ FINALE ============ -->
+    <section class="finale" id="finale">
+        <div class="finale-streams" aria-hidden="true">
+            <div class="aurora-row stream-1">
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+            </div>
+            <div class="aurora-row stream-2">
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+            </div>
+            <div class="aurora-row stream-3">
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+            </div>
+            <div class="aurora-row stream-4">
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · </span>
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · </span>
+            </div>
+            <div class="aurora-row stream-5">
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+                <span class="aurora-text">AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · AURORA · </span>
+            </div>
+        </div>
+
+        <div class="finale-content">
+            <div class="finale-star-wrap">
+                <div class="finale-rings">
+                    <div class="finale-ring"></div>
+                    <div class="finale-ring"></div>
+                    <div class="finale-ring"></div>
+                </div>
+                <div class="finale-glow"></div>
+                <div class="finale-star">✦</div>
+                <div class="finale-sparks">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <p class="finale-tag">— конец — но не финал —</p>
+            <p class="finale-credit">Aurora · 2026</p>
+        </div>
+
+        <div class="finale-vignette"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
